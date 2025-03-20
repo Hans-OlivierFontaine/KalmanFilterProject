@@ -1,32 +1,38 @@
-# Kalman Filter Tutorial Implementation
+# Kalman Filter Implementation Project
 
-This project implements the sections of the [Kalman Filter Tutorial](https://www.kalmanfilter.net/default.aspx) by B. Welsh. The goal is to provide a structured, clean Python implementation of each concept introduced in the tutorial, with clear code and explanations for educational purposes.
+This project contains structured Python implementations of key concepts from the [Kalman Filter Tutorial](https://www.kalmanfilter.net/default.aspx) by B. Welsh. The purpose is to provide a clean and extensible codebase for learning and experimenting with Kalman Filters and related state estimation methods.
 
-## 📚 Tutorial Sections Implemented
+## ✅ Implemented Modules
 
-We follow the tutorial's structure, implementing each section in order:
+We are implementing the tutorial progressively. The following components have been completed:
 
-1. **Introduction to Kalman Filters**
-2. **The Process to be Estimated**
-3. **The Measurement**
-4. **The Kalman Filter Equations**
-5. **One-Dimensional Kalman Filter Example**
-6. **Multidimensional Kalman Filter**
-7. **Kalman Filter in Matrix Form**
-8. **Example Applications**
-   - Constant velocity model
-   - Constant acceleration model
-   - Noisy measurements
+### 1. `BasicValueTracker`
+A simple value tracker implemented in `lib/utils.py`. It handles:
+- Adding new observed values
+- Calculating current average state
+- Returning historical values
 
-Each section will be implemented in its own Python module or notebook, with detailed comments and visualizations when applicable.
+Useful for basic state tracking and smoothing without prediction.
+
+### 2. `AlphaBetaFilter`
+A 1D constant-velocity alpha-beta filter to estimate position and velocity:
+- Tracks the state of an object in one dimension
+- Includes a prediction step and a correction step
+- Useful for simple motion models with lag reduction
+
+### 3. `AlphaBetaGammaFilter` (In Progress)
+A more advanced constant-acceleration model that improves on the alpha-beta filter by estimating acceleration as well:
+- Further reduces estimation lag
+- Useful when the tracked system exhibits varying velocities
 
 ## 🔧 Requirements
 
 - Python 3.8+
-- `matplotlib` for visualizations (only where required)
-- `numpy` for matrix operations
+- `numpy` for matrix math (minimal dependencies)
+- `matplotlib` (optional, for visualizations)
 
-To install the requirements:
+Install with:
+
 ```bash
 pip install numpy matplotlib
 ```
@@ -34,31 +40,22 @@ pip install numpy matplotlib
 ## 📁 Project Structure
 
 ```
-kalman_filter_tutorial/
-├── 01_intro/
+kalman_filter_project/
+├── lib/
+│   └── utils.py        # Contains BasicValueTracker, AlphaBetaFilter, AlphaBetaGammaFilter
+├── examples/
 │   └── ...
-├── 02_process_estimation/
-│   └── ...
-├── 03_measurement/
-│   └── ...
-├── ...
 ├── README.md
 ```
 
-Each section folder will include:
-- Python implementation
-- Comments or markdowns explaining the steps
-- Optional visualizations for better understanding
+## 📈 Goals
 
-## 📈 Goal
+- Follow the Kalman Filter tutorial step-by-step
+- Write clean, well-documented Python code
+- Use minimal external libraries
+- Provide simple, real-world-inspired test examples
 
-This project serves as a learning resource for students, researchers, and engineers interested in understanding and implementing Kalman Filters from scratch, starting from the simplest case to more complex applications.
+## 📌 Reference
 
-## 📌 Source
-
-All concepts and examples are based on the excellent tutorial by B. Welsh:
+Tutorial by B. Welsh:  
 👉 https://www.kalmanfilter.net/default.aspx
-
----
-
-*Made for educational purposes and better understanding of state estimation techniques.*
