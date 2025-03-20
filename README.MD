@@ -1,5 +1,3 @@
-Here's a `README.md` file for your Kalman filter project based on the tutorial at [kalmanfilter.net](https://www.kalmanfilter.net/default.aspx):
-
 # Kalman Filter Tutorial Implementation
 
 This project implements the sections of the [Kalman Filter Tutorial](https://www.kalmanfilter.net/default.aspx) by B. Welsh. The goal is to provide a structured, clean Python implementation of each concept introduced in the tutorial, with clear code and explanations for educational purposes.
