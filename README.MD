@@ -7,7 +7,7 @@ This project contains structured Python implementations of key concepts from the
 We are implementing the tutorial progressively. The following components have been completed:
 
 ### 1. `BasicValueTracker`
-A simple value tracker implemented in `lib/utils.py`. It handles:
+A simple value tracker implemented in `lib/AlphaBetaGammaFilter.py`. It handles:
 - Adding new observed values
 - Calculating current average state
 - Returning historical values
@@ -42,9 +42,8 @@ pip install numpy matplotlib
 ```
 kalman_filter_project/
 ├── lib/
-│   └── utils.py        # Contains BasicValueTracker, AlphaBetaFilter, AlphaBetaGammaFilter
-├── examples/
-│   └── ...
+│   └── AlphaBetaGammaFilter.py        # Contains BasicValueTracker, AlphaBetaFilter, AlphaBetaGammaFilter
+│   └── Kalman1D.py                    # Contains 1D Kalman filters (static, dynamic, with noise, witout noise)
 ├── README.md
 ```
 
